@@ -21,18 +21,38 @@
                     </li>
 
 
-                    <li class="nav-item active">
-                      <a class="nav-link" href="{% url 'basic_app:villages' %}">Villages <span class="sr-only">(current)</span></a>
-                    </li>
 
 
-                    <li class="nav-item active">
-                      <a class="nav-link" href="{% url 'basic_app:patient' %}">Patient <span class="sr-only"> </span> </a>
-                    </li>
 
+
+                    {% if user.is_authenticated %}
                     <li class="nav-item active">
-                      <a class="nav-link" href="{% url 'basic_app:pharmacy' %}">Pharmacy <span class="sr-only"> </span> </a>
+                        <a class="nav-link active" href="{% url 'basic_app:patien' %}">Patient<span class="sr-only"> </span> </a>
                     </li>
+                    {% else %}
+                    <li class="nav-item disabled">
+                        <a class="nav-link disabled" href="{% url 'basic_app:patient' %}">Patient<span class="sr-only"> </span> </a>
+                    </li>
+                    {% endif %}
+
+
+
+
+
+
+                    {% if user.is_authenticated %}
+                    <li class="nav-item active">
+                        <a class="nav-link active" href="{% url 'basic_app:pharmacy' %}">Pharma<span class="sr-only"> </span> </a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item disabled">
+                        <a class="nav-link disabled" href="{% url 'basic_app:pharmacy' %}">Pharma<span class="sr-only"> </span> </a>
+                    </li>
+                    {% endif %}
+
+
+
+
 
 
 

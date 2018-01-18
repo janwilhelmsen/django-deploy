@@ -24,7 +24,7 @@ def user_logout(request):
 def admin(request):
     return render(request,'basic_app/admin.html')
 
-
+@login_required
 def person(request):
     personlst= Person.objects.order_by('lastname')
     #print (personlst)
@@ -36,11 +36,12 @@ def person(request):
 
     return render(request,'basic_app/person.html',context=person_dict)
 
+@login_required
 def registration(request):
 
+    missing_village = True
     person = PersonForm()
     if request.method=='POST':
-        print ("Posting")
         person = PersonForm(data=request.POST)
 
         if person.is_valid():
@@ -52,12 +53,14 @@ def registration(request):
     else:
         return render(request,'basic_app/registration.html',{'person':person})
 
-
+@login_required
 def patient(request):
     return render(request,'basic_app/patient.html')
 
+@login_required
 def pharmacy(request):
     return render(request,'basic_app/pharmacy.html')
+
 
 def user_login(request):
     if request.method == 'POST':
@@ -80,7 +83,7 @@ def user_login(request):
         return render(request,'basic_app/login.html',{})
 
 
-
+@login_required
 def villages(request):
     villages_form = VillageForm()
     if request.method=='POST':
@@ -95,6 +98,7 @@ def villages(request):
     else:
         return render(request,'basic_app/village.html',{'villages_form':villages_form})
 
+@login_required
 def villagespop(request):
     popupform=VillagePopupForm()
     if request.method=='POST':
