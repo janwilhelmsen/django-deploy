@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{% extends 'basic_app/base.html' %}
+
+
+{% block body_block %}
+<div class="container">
+    <div class="jumbotron">
+        <h3>Admin Tools</h3>
+        <p></p>
+        <a class="btn btn-primary" href="{% url 'basic_app:staff' %}">add staff</a>
+    </div>
+
+</div>
+
+{% endblock %}

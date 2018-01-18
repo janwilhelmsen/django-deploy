@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% extends 'basic_app/base.html' %}
+
+{% block body_block %}
+<div class="container">
+<div class="jumbotron">
+<h3>Registration</h3>
+<h4>Fill out form below: </h4>
+</div>
+<form method="post">
+    {{ person.as_table }}
+
+    {% csrf_token %}
+    <input class="btn btn-primary"type="submit" name="" value="Submit">
+    <!-- <button type="button" class="btn btn-info">Add village</button> -->
+    <!-- <a href="#"></a> -->
+</form>
+<p></p>
+<a href="{% url 'basic_app:villagespop' %}" class="btn btn-secondary" role="button"
+  target="popup"
+  onclick="window.open('{% url 'basic_app:villagespop' %}','popup','width=300,height=200'); return false;">
+
+    Add Village
+</a>
+</div>
+
+
+
+
+
+
+{% endblock %}

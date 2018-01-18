@@ -1,0 +1,21 @@
+h1{
+    color: blue;
+}
+
+
+body{
+    background-color: #0E8BAB;
+}
+
+
+.navbar-custom{
+    background-color: #0E8BAB;
+}
+
+.navbar-brand{
+    color: white;
+    font-weight: bold;
+}
+.nav-link{
+    color: white;
+}

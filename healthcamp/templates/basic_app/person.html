@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% extends 'basic_app/base.html' %}
+
+
+{% block body_block %}
+<div class="container">
+
+
+
+<h1>
+List persons
+
+
+
+</h1>
+{%if person %}
+
+<table border="6">
+    <thead>
+        
+        <th>ID</th>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Age</th>
+        <th>Sex</th>
+        <th>Village</th>
+    </thead>
+
+        {% for each in person %}
+            <tr>
+                <td>{{each.id}}</td>
+                <td>{{each.firstname}}</td>
+                <td>{{each.lastname}}</td>
+                <td>{{each.age}}</td>
+                <td>{{each.sex}}</td>
+                <td>{{each.village}}</td>
+            </tr>
+        {% endfor %}
+
+</table>
+
+{% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{% extends 'basic_app/base.html' %}
+
+
+{% block body_block %}
+<div class="container">
+    <div class="jumbotron">
+        <h3>Fill out form to register new staffmember</h3>
+
+        <form enctype='multipart/form-data' method="post">
+            {% csrf_token %}
+            {{user_form_dict.as_p}}
+            {{staffmember_dict.as_p}}
+            <input type="submit" class="btn btn-primary" name="" value="Register">
+        </form>
+    </div>
+</div>
+{% endblock %}
